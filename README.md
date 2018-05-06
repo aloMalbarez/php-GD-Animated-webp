@@ -41,7 +41,7 @@ RIFF/WEBP
 
 3) chunk header ANIM
 
-2.a) calculate chunksize (uint32) = 6
+3.a) calculate chunksize (uint32) = 6
 
 3.b) background color: BGRA (0,0,0,0)
 
@@ -51,7 +51,7 @@ RIFF/WEBP
 
 4.a) chunk header ANMF
 
-2.b) calculate chunksize (uint32) = 16 + total bytes in frameData
+4.b) calculate chunksize (uint32) = 16 + total bytes in frameData
 
 4.c) frame origin X,Y (uint24) (/2?)
 
