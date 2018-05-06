@@ -70,8 +70,6 @@ $fileWEBP = "";
 $fileHeader = "";
 $fileContents = "";
 
-$zeroPadding4 = str_repeat(chr(0), 4);
-//$zeroPadding4 = "";
 // Chunk HEADER VP8X
 $fileContents .="VP8X";
 $headChunkSize = bytesToString(toUint32(10));
@@ -80,7 +78,6 @@ $oVP8XflagsBin = "00010010 00000000 00000000 00000000";
 $oVP8Xflags = bytesToString(binaryToBytes($oVP8XflagsBin));
 $oCanvasSize = bytesToString(toUint24($oWidth-1)).bytesToString(toUint24($oHeight-1));
 $fileContents .= $headChunkSize. $oVP8Xflags. $oCanvasSize;
-// zeropadding ?
 
 // Chunk HEADER ANIM
 $fileContents .="ANIM";
@@ -91,7 +88,6 @@ $oLoopCount = str_repeat(chr(0), 2);
 // 32bits BGRA, Blue Green Red Alpha (0,0,0,0)
 $oBackGround = str_repeat(chr(0), 4);
 $fileContents .= $animChunkSize . $oBackGround . $oLoopCount;
-// zeropadding ?
 
 foreach ($frameArray as $frame) :
   // Chunk HEADER ANMF
